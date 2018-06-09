@@ -11,8 +11,12 @@
           <img src="img/index-logo.svg" width="111" height="18" alt="Техномарт">
         </a>
         <div class="top-header__search">
-          <!--тут форма для поиска-->
-          Поиск
+          <form method="post" action="https://echo.htmlacademy.ru">
+            <p>
+              <label for="header-search">Поиск</label>
+              <input id="header-search" type="text" name="search" placeholder="Поиск:"/>
+            </p>
+          </form>
         </div>
         <ul class="services__list top-header__services">
           <li class="services__item services__item--bookmarks">
@@ -94,9 +98,11 @@
               <img src="img/slide-2.jpg" width="620" height="266" alt="Перфораторы. Настоящие мужские игрушки">
             </li>
           </ul>
-          <span class="carousel__prev-slide">Предыдущий слайд</span>
-          <span class="carousel__next-slide">Следующий слайд</span>
+          <button class="carousel__scroll carousel__scroll--prev" type="button">Предыдущий слайд</button>
+          <button class="carousel__scroll carousel__scroll--next" type="button">Следующий слайд</button>
           <a href="catalog.html">Открыть каталог</a>
+          <button class="carousel__scroll-item" type="button">Слайд про дрели</button>
+          <button class="carousel__scroll-item" type="button">Слайд про перфораторы</button>
         </div>
         <div class="promo-card">
           <h3>Скидки 50%</h3>
@@ -117,6 +123,14 @@
           <li class="hits__item">
             <article class="card">
               <img class="card__thumbnail" src="img/products/tools-1.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 9000">
+              <ul class="card__actions-list">
+                <li class="card__actions-item">
+                  <button type="button">Купить</button>
+                </li>
+                <li class="card__actions-item">
+                  <button type="button">В закладки</button>
+                </li>
+              </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 9000</h3></a>
               <p class="card__origin-price">32500 р.</p>
               <div class="card__current-price">25500 р.</div>
@@ -125,6 +139,14 @@
           <li class="hits__item">
             <article class="card">
               <img class="card__thumbnail" src="img/products/tools-2.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 3000">
+              <ul class="card__actions-list">
+                <li class="card__actions-item">
+                  <button type="button">Купить</button>
+                </li>
+                <li class="card__actions-item">
+                  <button type="button">В закладки</button>
+                </li>
+              </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 3000</h3></a>
               <p class="card__origin-price">22500 р.</p>
               <div class="card__current-price">15500 р.</div>
@@ -133,6 +155,14 @@
           <li class="hits__item">
             <article class="card">
               <img class="card__thumbnail" src="img/products/tools-3.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 6000">
+              <ul class="card__actions-list">
+                <li class="card__actions-item">
+                  <button type="button">Купить</button>
+                </li>
+                <li class="card__actions-item">
+                  <button type="button">В закладки</button>
+                </li>
+              </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 6000</h3></a>
               <p class="card__origin-price">30500 р.</p>
               <div class="card__current-price">25500 р.</div>
@@ -141,6 +171,14 @@
           <li class="hits__item">
             <article class="card card--new">
               <img class="card__thumbnail" src="img/products/tools-2.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 2000">
+              <ul class="card__actions-list">
+                <li class="card__actions-item">
+                  <button type="button">Купить</button>
+                </li>
+                <li class="card__actions-item">
+                  <button type="button">В закладки</button>
+                </li>
+              </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 2000</h3></a>
               <div class="card__current-price">12500 р.</div>
             </article>
@@ -227,13 +265,13 @@
         <div class="tabs">
           <ul class="tabs__links">
             <li class="tabs__link">
-              <a href="">Доставка</a>
+              <button type="button">Доставка</button>
             </li>
             <li class="tabs__link">
-              <a href="">Гарантия</a>
+              <button type="button">Гарантия</button>
             </li>
             <li class="tabs__link">
-              <a href="">Кредит</a>
+              <button type="button">Кредит</button>
             </li>
           </ul>
           <ul class="tabs__content-list">
@@ -282,8 +320,8 @@
         <section class="contacts">
           <h2>Контакты</h2>
           <p>Вы&nbsp;можете забрать товар сами, заехав в&nbsp;наш офис:</p>
-          <span><img src="img/map-small.jpg" width="300" height="158" alt="г.Санкт-Петербург, ул. Б.Конюшенная, д. 19/8"></span>
-          <span>Заблудились? Напишите нам!</span>
+          <button type="button"><img src="img/map-small.jpg" width="300" height="158" alt="г.Санкт-Петербург, ул. Б.Конюшенная, д. 19/8"></button>
+          <button type="button">Заблудились? Напишите нам!</button>
         </section>
       </section>
     </main>
@@ -346,12 +384,25 @@
     <section class="modal modal--map">
       <h2 class="visually-hidden">Как до нас добраться</h2>
       <img src="img/map.jpg" width="940" height="446" alt="г.Санкт-Петербург, ул. Б.Конюшенная, д. 19/8">
-      <span class="modal__close">x</span>
+      <button class="modal__close" type="button">Закрыть</button>
     </section>
 
     <section class="modal modal--feedback">
       <h2 class="visually-hidden">Написать нам</h2>
-      <span class="modal__close">x</span>
+      <form method="post" action="https://echo.htmlacademy.ru">
+        <div>
+          <label for="feedback-name">Ваше имя:</label>
+          <input id="feedback-name" type="text" name="name" placeholder="Имя Фамилия"/>
+          <label for="feedback-mail">Ваш e-mail:</label>
+          <input id="feedback-mail" type="text" name="mail" placeholder="email@example.com">
+        </div>
+        <div>
+          <label for="feedback-message">Текст письма:</label>
+          <textarea id="feedback-message" name="message" placeholder="В свободной форме"></textarea>
+        </div>
+        <button type="submit">Отправить</button>
+      </form>
+      <button class="modal__close" type="button">Закрыть</button>
     </section>
   </body>
 </html>
