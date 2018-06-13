@@ -2,6 +2,7 @@
   font-weight: normal;
   font-family: "Cuprum";
   font-style: normal;
+
   src: url("../fonts/cuprum.woff2") format("woff2"), url("../fonts/cuprum.woff") format("woff");
 }
 
@@ -9,6 +10,7 @@
   font-weight: bold;
   font-family: "Cuprum";
   font-style: normal;
+
   src: url("../fonts/cuprumbold.woff2") format("woff2"), url("../fonts/cuprumbold.woff") format("woff");
 }
 
@@ -16,6 +18,7 @@
   font-weight: normal;
   font-family: "Cuprum";
   font-style: italic;
+
   src: url("../fonts/cuprumitalic.woff2") format("woff2"), url("../fonts/cuprumitalic.woff") format("woff");
 }
 
@@ -23,6 +26,7 @@
   font-weight: normal;
   font-family: "PT Sans";
   font-style: normal;
+
   src: url("../fonts/ptsans.woff2") format("woff2"), url("../fonts/ptsans.woff") format("woff");
 }
 
@@ -30,12 +34,13 @@
   font-weight: bold;
   font-family: "PT Sans";
   font-style: normal;
+
   src: url("../fonts/ptsansbold.woff2") format("woff2"), url("../fonts/ptsansbold.woff") format("woff");
 }
 
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
 
   font-size: 13px;
   line-height: 24px;
@@ -57,10 +62,10 @@ a {
 .button {
   font-size: 14px;
   line-height: 18px;
-  text-align: center;
   vertical-align: middle;
-  text-transform: uppercase;
+  text-align: center;
   color: rgb(255, 255, 255);
+  text-transform: uppercase;
 
   border: none;
   cursor: pointer;
@@ -141,6 +146,7 @@ a {
 
 .top-header__order {
   font: inherit;
+
   background-color: rgb(99, 166, 62);
 }
 
@@ -158,15 +164,15 @@ a {
 .main-header__title {
   font-size: 16px;
   line-height: 23px;
-  font-style: italic;
   color: rgb(238, 54, 67);
+  font-style: italic;
 }
 
 .contact-info__tel {
   font-size: 21px;
   line-height: 21px;
-  color: rgb(238, 54, 67);
   text-align: center;
+  color: rgb(238, 54, 67);
 
   border: 3px solid rgb(255, 255, 255);
 }
@@ -211,8 +217,8 @@ a {
 .user__button--service {
   font-size: 16px;
   line-height: 18px;
-  text-transform: none;
   color: rgb(50, 66, 92);
+  text-transform: none;
   text-decoration: underline;
 
   background-color: transparent;
@@ -269,16 +275,16 @@ a {
 }
 
 .promo-card__title {
+  font-weight: bold;
   font-size: 24px;
   line-height: 30px;
-  font-weight: bold;
 }
 
 .promo-card__link {
   font-size: 14px;
   line-height: 18px;
-  text-transform: uppercase;
   color: rgb(255, 255, 255);
+  text-transform: uppercase;
 
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -297,10 +303,10 @@ a {
 }
 
 .slide {
-  text-transform: uppercase;
   color: rgb(255, 255, 255);
-
+  text-transform: uppercase;
   /*временно чтобы было видно текст*/
+
   background-color: rgb(104, 92, 83);
 }
 
@@ -325,14 +331,14 @@ a {
 .hits__title {
   font-size: 30px;
   line-height: 30px;
-  text-transform: uppercase;
   color: rgb(50, 66, 92);
+  text-transform: uppercase;
 }
 
 .card {
-  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 17px;
   line-height: 18px;
+  font-family: "PT Sans", "Arial", sans-serif;
   color: rgb(0, 0, 0);
 
   background-color: rgb(255, 255, 255);
@@ -343,7 +349,6 @@ a {
   font-size: 18px;
   line-height: 20px;
   color: rgb(0, 0, 0);
-
 }
 
 .card__actions-list {
@@ -368,13 +373,12 @@ a {
 
   background-color: rgb(255, 255, 255);
   border: 3px solid rgb(50, 66, 92);
-
   opacity: 0.3;
 }
 
 .card__actions-cart {
   background-color: rgb(99, 166, 62);
-  box-shadow: inset 0px -3px 0 0 rgb(54, 115, 21);
+  box-shadow: inset 0 -3px 0 0 rgb(54, 115, 21);
 }
 
 .card__actions-cart:focus,
@@ -400,18 +404,18 @@ a {
 }
 
 .services {
-  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   line-height: 24px;
+  font-family: "PT Sans", "Arial", sans-serif;
   color: rgb(0, 0, 0);
 
   background-color: rgb(244, 248, 249);
 }
 
 .services__title {
-  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 30px;
   line-height: 30px;
+  font-family: "Cuprum", "Arial", sans-serif;
   text-transform: uppercase;
 }
 
@@ -420,9 +424,9 @@ a {
 }
 
 .tabs__link {
-  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 21px;
   line-height: 30px;
+  font-family: "Cuprum", "Arial", sans-serif;
   color: rgb(255, 255, 255);
 
   background-color: rgb(50, 66, 92);
@@ -438,6 +442,7 @@ a {
 .tabs__link--current:focus,
 .tabs__link--current:hover {
   color: rgb(50, 66, 92);
+
   background-color: rgb(255, 255, 255);
 }
 
@@ -446,34 +451,33 @@ a {
 }
 
 .tabs__item-title {
-  font-family: "Cuprum", "Arial", sans-serif;
-  font-size:36px;
+  font-size: 36px;
   line-height: 43px;
-  text-transform: uppercase;
+  font-family: "Cuprum", "Arial", sans-serif;
   color: rgb(50, 66, 92);
+  text-transform: uppercase;
 }
 
 .company-info {
-  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   line-height: 24px;
+  font-family: "PT Sans", "Arial", sans-serif;
   color: rgb(0, 0, 0);
 
   background-color: rgb(255, 255, 255);
 }
 
 .company-info__title {
-  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 30px;
   line-height: 30px;
+  font-family: "Cuprum", "Arial", sans-serif;
 }
 
 .list {
-  font-family: "Cuprum", "Arial", sans-serif;
-  font-size:18px;
-  line-height: 20px;
-
   list-style: none;
+  font-size: 18px;
+  line-height: 20px;
+  font-family: "Cuprum", "Arial", sans-serif;
 }
 
 .main-footer {
@@ -566,13 +570,12 @@ a {
 }
 
 .breadcrumbs {
-  font-family: "PT Sans", "Arial", sans-serif;
+  list-style: none;
   font-size: 13px;
   line-height: 18px;
-  text-transform: uppercase;
+  font-family: "PT Sans", "Arial", sans-serif;
   color: rgb(0, 0, 0);
-
-  list-style: none;
+  text-transform: uppercase;
 }
 
 .breadcrumbs__link {
@@ -604,9 +607,9 @@ a {
 }
 
 .filter__title {
+  font-weight: normal;
   font-size: 13px;
   line-height: 18px;
-  font-weight: normal;
 
   background-color: rgb(247, 243, 236);
 }
@@ -616,9 +619,9 @@ a {
 }
 
 .filter__group-title {
+  font-weight: bold;
   font-size: 17px;
   line-height: 30px;
-  font-weight: bold;
 }
 
 .filter__list {
@@ -630,7 +633,7 @@ a {
   line-height: 20px;
 }
 
-.filter__input:disabled + .filter__label{
+.filter__input:disabled + .filter__label {
   opacity: 0.4;
 }
 
@@ -657,9 +660,9 @@ a {
 }
 
 .range__input {
-  font-family: inherit;
   font-size: 17px;
   line-height: 18px;
+  font-family: inherit;
   text-align: center;
   color: rgb(0, 0, 0);
 
@@ -668,11 +671,11 @@ a {
 }
 
 .sort-panel {
-  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   line-height: 18px;
-  text-transform: uppercase;
+  font-family: "PT Sans", "Arial", sans-serif;
   color: rgb(0, 0, 0);
+  text-transform: uppercase;
 
   background-color: rgb(247, 243, 236);
 }
@@ -684,12 +687,14 @@ a {
 .sort-panel__link {
   font: inherit;
   color: rgba(0, 0, 0, 0.3);
+
   border-bottom: 1px dotted rgb(238, 54, 67);
 }
 
 .sort-panel__link:focus,
 .sort-panel__link:hover {
   color: rgb(0, 0, 0);
+
   border-bottom-style: solid;
 }
 
@@ -699,6 +704,7 @@ a {
 .sort-panel__link--current:hover,
 .sort-panel__link--current:active {
   color: rgb(238, 54, 67);
+
   border: none;
 }
 
@@ -731,7 +737,6 @@ a {
   color: rgb(255, 255, 255);
 
   background-color: rgb(238, 54, 67);
-
   border-color: rgb(238, 54, 67);
 }
 
