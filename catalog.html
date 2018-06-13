@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="main-header">
@@ -11,22 +13,22 @@
           <img src="img/index-logo.svg" width="111" height="18" alt="Техномарт">
         </a>
         <div class="top-header__search">
-          <form method="post" action="https://echo.htmlacademy.ru">
+          <form class="search" method="post" action="https://echo.htmlacademy.ru">
             <p>
-              <label for="header-search">Поиск</label>
-              <input id="header-search" type="text" name="search" placeholder="Поиск:"/>
+              <label class="visually-hidden" for="header-search">Поиск</label>
+              <input class="search__input" id="header-search" type="text" name="search" placeholder="Поиск:"/>
             </p>
           </form>
         </div>
         <ul class="services__list top-header__services">
           <li class="services__item services__item--bookmarks">
-            <a href="bookmarks.html">Закладки:<span>0</span></a>
+            <a class="button services__link" href="bookmarks.html">Закладки:<span>0</span></a>
           </li>
-          <li class="services__item services__item--no-empty services__item--cart">
-            <a href="cart.html">Корзина:<span>10</span></a>
+          <li class="services__item services__item--cart">
+            <a class="button services__link" href="cart.html">Корзина:<span>0</span></a>
           </li>
         </ul>
-        <a class="top-header__order" href="order.html">Оформить заказ</a>
+        <a class="button top-header__order" href="order.html">Оформить заказ</a>
       </div>
       <p class="main-header__title">Интернет-магазин строительных материалов и инструментов для ремонта</p>
       <div class="contact-info main-header__contact-info">
@@ -36,18 +38,19 @@
       <div class="user main-header__user">
         <ul class="user__navigation">
           <li>
-            <a href="profile.html">Равшан Джамшутович</a>
+            <a class="button user__button user__button--profile" href="profile.html">Равшан
+              Джамшутович</a>
           </li>
           <li>
-            <a href="sing-out.html">Выход</a>
+            <a class="button user__button" href="sing-out.html">Выход</a>
           </li>
         </ul>
         <ul class="user__services">
           <li>
-            <a href="orders.html">Мои заказы</a>
+            <a class="button user__button user__button--service" href="orders.html">Мои заказы</a>
           </li>
           <li>
-            <a href="profile.html">Личный кабинет</a>
+            <a class="button user__button user__button--service" href="profile.html">Личный кабинет</a>
           </li>
         </ul>
       </div>
@@ -60,13 +63,13 @@
             <a class="navigation__link" href="company.html">Компания</a>
           </li>
           <li class="navigation__item navigation__item--current">
-            <a class="navigation__link" href="catalog.html">Каталог</a>
+            <a class="navigation__link navigation__link--current">Каталог</a>
           </li>
           <li class="navigation__item">
             <a class="navigation__link" href="news.html">Новости</a>
           </li>
           <li class="navigation__item">
-            <a class="navigation__link" href="special.html">Спецпредложениея</a>
+            <a class="navigation__link" href="special.html">Спецпредложения</a>
           </li>
           <li class="navigation__item">
             <a class="navigation__link" href="delivery.html">Доставка</a>
@@ -79,14 +82,14 @@
     </header>
     <main>
       <ul class="breadcrumbs">
-        <li class="breadcrumbs_item breadcrumbs__item--home">
-          <a href="index.html">На главную</a>
+        <li class="breadcrumbs__item breadcrumbs__item--home">
+          <a class="breadcrumbs__link" href="index.html">На главную</a>
         </li>
         <li class="breadcrumbs__item">
-          <a href="catalog.html">Каталог</a>
+          <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
         </li>
         <li class="breadcrumbs__item">
-          <a href="tools.html">Инструмент</a>
+          <a class="breadcrumbs__link" href="tools.html">Инструмент</a>
         </li>
         <li class="breadcrumbs_item breadcrumbs__item--current">
           Перфораторы
@@ -96,55 +99,59 @@
       <section class="filter">
         <h2 class="filter__title">Фильтр:</h2>
         <form method="post" action="https://echo.htmlacademy.ru">
-          <fieldset>
-            <legend>Цена:</legend>
-            <div class="range">
+          <fieldset class="range filter__group">
+            <legend class="filter__group-title">Цена:</legend>
+            <div class="range__view">
               <button class="range__button" type="button">Минимальная цена</button>
               <button class="range__button" type="button">Максимальная цена</button>
             </div>
             <p>
-              <label for="range-min">Минимальная цена</label>
-              <input id="range-min" type="number" name="price-min" value="0" min="0">
+              <label class="visually-hidden" for="range-min">Минимальная цена</label>
+              <input class="range__input" id="range-min" type="number" name="price-min" value="0" min="0">
               <span>&mdash;</span>
-              <label for="range-max">Максимальная цена</label>
-              <input id="range-max" type="number" name="price-max" value="30000" min="0">
+              <label class="visually-hidden" for="range-max">Максимальная цена</label>
+              <input class="range__input" id="range-max" type="number" name="price-max" value="30000" min="0">
             </p>
           </fieldset>
-          <fieldset>
-            <legend>Производители:</legend>
-            <p>
-              <input id="brand-bosch" type="checkbox" name="brands" value="bosch" checked>
-              <label for="brand-bosch">Bosch</label>
-            </p>
-            <p>
-              <input id="brand-interscol" type="checkbox" name="brands" value="interscol">
-              <label for="brand-interscol">Интерскол</label>
-            </p>
-            <p>
-              <input id="brand-makita" type="checkbox" name="brands" value="makita" checked>
-              <label for="brand-makita">Makita</label>
-            </p>
-            <p>
-              <input id="brand-dewalt" type="checkbox" name="brands" value="dewalt">
-              <label for="brand-dewalt">Dewalt</label>
-            </p>
-            <p>
-              <input id="brand-hitachi" type="checkbox" name="brands" value="hitachi">
-              <label for="brand-hitachi">Hitachi</label>
-            </p>
+          <fieldset class="filter__group">
+          <legend class="filter__group-title">Производители:</legend>
+            <ul class="filter__list">
+              <li>
+                <input class="filter__input" id="brand-bosch" type="checkbox" name="brands" value="bosch" checked>
+                <label class="filter__label" for="brand-bosch">Bosch</label>
+              </li>
+              <li>
+                <input class="filter__input" id="brand-interscol" type="checkbox" name="brands" value="interscol">
+                <label class="filter__label" for="brand-interscol">Интерскол</label>
+              </li>
+              <li>
+                <input class="filter__input" id="brand-makita" type="checkbox" name="brands" value="makita" checked>
+                <label class="filter__label" for="brand-makita">Makita</label>
+              </li>
+              <li>
+                <input class="filter__input" id="brand-dewalt" type="checkbox" name="brands" value="dewalt">
+                <label class="filter__label" for="brand-dewalt">Dewalt</label>
+              </li>
+              <li>
+                <input class="filter__input" id="brand-hitachi" type="checkbox" name="brands" value="hitachi">
+                <label class="filter__label" for="brand-hitachi">Hitachi</label>
+              </li>
+            </ul>
           </fieldset>
-          <fieldset>
-            <legend>Питание:</legend>
-            <p>
-              <input id="power-battery" type="radio" name="power" value="power-battery" checked>
-              <label for="power-battery">Аккумуляторные</label>
-            </p>
-            <p>
-              <input id="main-power-supply" type="radio" name="power" value="main-power-supply">
-              <label for="main-power-supply">Сетевые</label>
-            </p>
+          <fieldset class="filter__group">
+            <legend class="filter__group-title">Питание:</legend>
+            <ul class="filter__list">
+              <li>
+                <input class="filter__input" id="power-battery" type="radio" name="power" value="power-battery" checked>
+                <label class="filter__label" for="power-battery">Аккумуляторные</label>
+              </li>
+              <li>
+                <input class="filter__input" id="main-power-supply" type="radio" name="power" value="main-power-supply">
+                <label class="filter__label" for="main-power-supply">Сетевые</label>
+              </li>
+            </ul>
           </fieldset>
-          <button type="submit">Показать</button>
+          <button class="button filter__button" type="submit">Показать</button>
         </form>
       </section>
       <section class="catalog">
@@ -152,22 +159,22 @@
         <div class="sort-panel catalog__sort">
           <p class="sort-panel__title">Сортировка:</p>
           <ul class="sort-panel__list">
-            <li class="sort-panel__item sort-panel__item--current">
-              <a href="#">По цене</a>
+            <li class="sort-panel__item">
+              <a class="button sort-panel__link sort-panel__link--current">По цене</a>
             </li>
             <li class="sort-panel__item">
-              <a href="#">По типу</a>
+              <a class="button sort-panel__link" href="#">По типу</a>
             </li>
             <li class="sort-panel__item">
-              <a href="#">По функционалу</a>
+              <a class="button sort-panel__link" href="#">По функционалу</a>
             </li>
           </ul>
           <ul class="sort-panel__list">
             <li class="sort-panel__item sort-panel__item--current">
-              <a href="#">По возрастанию</a>
+              <a class="button sort-panel__link sort-panel__link--current">По возрастанию</a>
             </li>
             <li class="sort-panel__item">
-              <a href="#">По убыванию</a>
+              <a class="button sort-panel__link" href="#">По убыванию</a>
             </li>
           </ul>
         </div>
@@ -177,10 +184,10 @@
               <img class="card__thumbnail" src="img/products/tools-2.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 3000">
               <ul class="card__actions-list">
                 <li class="card__actions-item">
-                  <button type="button">Купить</button>
+                  <button class="button card__actions-cart" type="button">Купить</button>
                 </li>
                 <li class="card__actions-item">
-                  <button type="button">В закладки</button>
+                  <button class="button card__actions-bookmark" type="button">В закладки</button>
                 </li>
               </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 3000</h3></a>
@@ -193,10 +200,10 @@
               <img class="card__thumbnail" src="img/products/tools-3.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 6000">
               <ul class="card__actions-list">
                 <li class="card__actions-item">
-                  <button type="button">Купить</button>
+                  <button class="button card__actions-cart" type="button">Купить</button>
                 </li>
                 <li class="card__actions-item">
-                  <button type="button">В закладки</button>
+                  <button class="button card__actions-bookmark" type="button">В закладки</button>
                 </li>
               </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 6000</h3></a>
@@ -209,10 +216,10 @@
               <img class="card__thumbnail" src="img/products/tools-2.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 2000">
               <ul class="card__actions-list">
                 <li class="card__actions-item">
-                  <button type="button">Купить</button>
+                  <button class="button card__actions-cart" type="button">Купить</button>
                 </li>
                 <li class="card__actions-item">
-                  <button type="button">В закладки</button>
+                  <button class="button card__actions-bookmark" type="button">В закладки</button>
                 </li>
               </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 2000</h3></a>
@@ -224,10 +231,10 @@
               <img class="card__thumbnail" src="img/products/tools-3.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 3000">
               <ul class="card__actions-list">
                 <li class="card__actions-item">
-                  <button type="button">Купить</button>
+                  <button class="button card__actions-cart" type="button">Купить</button>
                 </li>
                 <li class="card__actions-item">
-                  <button type="button">В закладки</button>
+                  <button class="button card__actions-bookmark" type="button">В закладки</button>
                 </li>
               </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 3000</h3></a>
@@ -240,10 +247,10 @@
               <img class="card__thumbnail" src="img/products/tools-2.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 6000">
               <ul class="card__actions-list">
                 <li class="card__actions-item">
-                  <button type="button">Купить</button>
+                  <button class="button card__actions-cart" type="button">Купить</button>
                 </li>
                 <li class="card__actions-item">
-                  <button type="button">В закладки</button>
+                  <button class="button card__actions-bookmark" type="button">В закладки</button>
                 </li>
               </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 6000</h3></a>
@@ -256,10 +263,10 @@
               <img class="card__thumbnail" src="img/products/tools-3.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 2000">
               <ul class="card__actions-list">
                 <li class="card__actions-item">
-                  <button type="button">Купить</button>
+                  <button class="button card__actions-cart" type="button">Купить</button>
                 </li>
                 <li class="card__actions-item">
-                  <button type="button">В закладки</button>
+                  <button class="button card__actions-bookmark" type="button">В закладки</button>
                 </li>
               </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 2000</h3></a>
@@ -271,10 +278,10 @@
               <img class="card__thumbnail" src="img/products/tools-2.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 3000">
               <ul class="card__actions-list">
                 <li class="card__actions-item">
-                  <button type="button">Купить</button>
+                  <button class="button card__actions-cart" type="button">Купить</button>
                 </li>
                 <li class="card__actions-item">
-                  <button type="button">В закладки</button>
+                  <button class="button card__actions-bookmark" type="button">В закладки</button>
                 </li>
               </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 3000</h3></a>
@@ -287,10 +294,10 @@
               <img class="card__thumbnail" src="img/products/tools-3.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 6000">
               <ul class="card__actions-list">
                 <li class="card__actions-item">
-                  <button type="button">Купить</button>
+                  <button class="button card__actions-cart" type="button">Купить</button>
                 </li>
                 <li class="card__actions-item">
-                  <button type="button">В закладки</button>
+                  <button class="button card__actions-bookmark" type="button">В закладки</button>
                 </li>
               </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 6000</h3></a>
@@ -303,10 +310,10 @@
               <img class="card__thumbnail" src="img/products/tools-2.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 2000">
               <ul class="card__actions-list">
                 <li class="card__actions-item">
-                  <button type="button">Купить</button>
+                  <button class="button card__actions-cart" type="button">Купить</button>
                 </li>
                 <li class="card__actions-item">
-                  <button type="button">В закладки</button>
+                  <button class="button card__actions-bookmark" type="button">В закладки</button>
                 </li>
               </ul>
               <a href="#"><h3 class="card__title">Перфоратор BOSCH BFG 2000</h3></a>
@@ -315,17 +322,17 @@
           </li>
         </ul>
         <ul class="pagination">
-          <li class="pagination__item pagination__item--current">
-            <a>1</a>
+          <li class="pagination__item">
+            <a class="button pagination__link pagination__link--current">1</a>
           </li>
           <li class="pagination__item">
-            <a href="#">2</a>
+            <a class="button pagination__link" href="#">2</a>
           </li>
           <li class="pagination__item">
-            <a href="#">3</a>
+            <a class="button pagination__link" href="#">3</a>
           </li>
           <li class="pagination__item">
-            <a href="#">Следующая</a>
+            <a class="button pagination__link" href="#">Следующая</a>
           </li>
         </ul>
       </section>
@@ -339,35 +346,35 @@
       <a class="logo main-footer__logo" href="index.html">
         <img src="img/index-logo.svg" width="138" height="23" alt="Техномарт">
       </a>
-      <p>г.Санкт-Петербург, ул. Б.Конюшенная, д. 19/8 +7(812) 555-05-55</p>
-      <nav class="navigation">
-        <ul class="navigation__list">
-          <li class="navigation__item">
-            <a href="company.html">Компания</a>
+      <p class="main-footer__address">г.Санкт-Петербург, ул. Б.Конюшенная, д. 19/8 +7(812) 555-05-55</p>
+      <nav class="footer-navigation">
+        <ul class="footer-navigation__list">
+          <li class="footer-navigation__item">
+            <a class="footer-navigation__link" href="company.html">Компания</a>
           </li>
-          <li class="navigation__item">
-            <a href="news.html">Новости</a>
+          <li class="footer-navigation__item">
+            <a class="footer-navigation__link" href="news.html">Новости</a>
           </li>
-          <li class="navigation__item">
-            <a href="catalog.html">Каталог</a>
+          <li class="footer-navigation__item">
+            <a class="footer-navigation__link" href="catalog.html">Каталог</a>
           </li>
-          <li class="navigation__item">
-            <a href="delivery.html">Доставка</a>
+          <li class="footer-navigation__item">
+            <a class="footer-navigation__link" href="delivery.html">Доставка</a>
           </li>
-          <li class="navigation__item">
-            <a href="contacts.html">Контакты</a>
+          <li class="footer-navigation__item">
+            <a class="footer-navigation__link" href="contacts.html">Контакты</a>
           </li>
-          <li class="navigation__item">
-            <a href="materials.html">Материалы</a>
+          <li class="footer-navigation__item">
+            <a class="footer-navigation__link footer-navigation__link--sub" href="materials.html">Материалы</a>
           </li>
-          <li class="navigation__item">
-            <a href="mechanism.html">Техника</a>
+          <li class="footer-navigation__item">
+            <a class="footer-navigation__link footer-navigation__link--sub" href="mechanism.html">Техника</a>
           </li>
-          <li class="navigation__item">
-            <a href="tools.html">Инструмент</a>
+          <li class="footer-navigation__item">
+            <a class="footer-navigation__link footer-navigation__link--sub" href="tools.html">Инструмент</a>
           </li>
-          <li class="navigation__item">
-            <a href="special.html">Спецпредложения</a>
+          <li class="footer-navigation__item">
+            <a class="footer-navigation__link footer-navigation__link--sub" href="special.html">Спецпредложения</a>
           </li>
         </ul>
       </nav>
@@ -376,25 +383,25 @@
         <div class="sub-footer__social">
           <ul>
             <li>
-              <a class="social-button" href="#">Вконтакте</a>
+              <a class="button social-button" href="#">Вконтакте</a>
             </li>
             <li>
-              <a class="social-button" href="#">Фейсбук</a>
+              <a class="button social-button" href="#">Фейсбук</a>
             </li>
             <li>
-              <a class="social-button" href="#">Инстаграм</a>
+              <a class="button social-button" href="#">Инстаграм</a>
             </li>
           </ul>
         </div>
-        <p class="sub-footer__mail">Обратная связь:<a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a></p>
-        <p class="sub-footer__development">Разработано-<a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
+        <p class="sub-footer__mail">Обратная связь:<a class="sub-footer__link" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a></p>
+        <p class="sub-footer__development">Разработано-<a class="sub-footer__link" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
       </div>
     </footer>
 
     <section class="modal modal--cart">
-      <h2>Товар добавлен в корзину!</h2>
-      <a href="order.html">Оформить заказ</a>
-      <button type="button">Продолжить покупки</button>
+      <h2 class="modal__message">Товар добавлен в корзину!</h2>
+      <a class="button button--default" href="order.html">Оформить заказ</a>
+      <button class="button modal__button" type="button">Продолжить покупки</button>
       <button class="modal__close" type="button">Закрыть</button>
     </section>
 
