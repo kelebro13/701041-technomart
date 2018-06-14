@@ -131,14 +131,31 @@ a {
 .services__link {
   font: inherit;
   text-transform: none;
+
+  background-color: rgb(238, 54, 67);
 }
 
 .services__link:focus,
 .services__link:hover {
-  background-color: rgb(33, 42, 58);
+  background-color: rgb(202, 44, 55);
 }
 
 .services__link:active {
+  color: rgba(255, 255, 255, 0.6);
+
+  background-color: rgb(186, 39, 50);
+}
+
+.services__link--empty {
+  background-color: transparent;
+}
+
+.services__link--empty:focus,
+.services__link--empty:hover {
+  background-color: rgb(33, 42, 58);
+}
+
+.services__link--empty:active {
   color: rgba(255, 255, 255, 0.6);
 
   background-color: rgb(22, 29, 41);
