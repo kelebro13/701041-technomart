@@ -164,19 +164,25 @@ input[type="radio"].visually-hidden {
   background-color: rgb(238, 54, 67);
   border-bottom: 5px solid rgb(181, 41, 51);
 
+  cursor: pointer;
+
   -webkit-box-align: center;
   -webkit-box-pack: center;
   -ms-flex-align: center;
   -ms-flex-pack: center;
 }
 
-.logo:focus,
-.logo:hover {
+.logo:not([href]) {
+  cursor: default;
+}
+
+.logo[href]:focus,
+.logo[href]:hover {
   background-color: rgb(202, 44, 55);
   border-bottom-color: rgb(154, 33, 42);
 }
 
-.logo:active {
+.logo[href]:active {
   background-color: rgb(186, 39, 50);
   border-bottom-color: rgb(142, 30, 38);
 }
@@ -410,13 +416,15 @@ input[type="radio"].visually-hidden {
   height: 158px;
 }
 
-.contact__button {
+.contact__map-button {
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
 
   background: none;
   border: none;
+
+  cursor: pointer;
 }
 
 .contact__link {
@@ -1048,7 +1056,6 @@ input[type="radio"].visually-hidden {
   top: 0;
   left: 0;
 
-  display: none;
   width: 218px;
   height: 88px;
   padding: 40px 0;
@@ -1056,6 +1063,7 @@ input[type="radio"].visually-hidden {
   list-style: none;
 
   background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
 }
 
 .card:focus,
@@ -1064,9 +1072,11 @@ input[type="radio"].visually-hidden {
           box-shadow: 0 10px 25px 0 rgba(41, 52, 73, 0.5);
 }
 
-.card--current.card__actions-list,
+.card--current .card__actions-list,
+.card:focus .card__actions-list,
+.card:focus-within .card__actions-list,
 .card:hover .card__actions-list {
-  display: block;
+  opacity: 1;
 }
 
 .card__action {
@@ -1087,10 +1097,6 @@ input[type="radio"].visually-hidden {
   border-radius: 3px;
   -webkit-box-shadow: inset 0 -3px 0 0 rgb(54, 115, 21);
           box-shadow: inset 0 -3px 0 0 rgb(54, 115, 21);
-}
-
-.card__action {
-  background-color: rgb(99, 166, 62);
 }
 
 .card__action:focus,
@@ -1599,21 +1605,17 @@ input[type="radio"].visually-hidden {
   margin-bottom: 20px;
 }
 
-.breadcrumbs__link {
+.breadcrumbs__item {
   position: relative;
 
-  display: block;
-  margin-right: 40px;
-
-  font: inherit;
-  color: rgb(0, 0, 0);
+  padding-right: 40px;
 }
 
-.breadcrumbs__link::after {
+.breadcrumbs__item::after {
   content: "";
   position: absolute;
-  top: 1px;
-  right: -23px;
+  top: 2px;
+  right: 14px;
 
   width: 8px;
   height: 12px;
@@ -1621,6 +1623,12 @@ input[type="radio"].visually-hidden {
   background: url("../img/icon-right-small.svg") no-repeat 0 0;
 }
 
+.breadcrumbs__link {
+  display: block;
+
+  font: inherit;
+  color: rgb(0, 0, 0);
+}
 
 .breadcrumbs__link--home {
   width: 14px;
@@ -1831,6 +1839,8 @@ input[type="radio"].visually-hidden {
 
   background: url("../img/filter-button.svg") no-repeat 0 0;
   border: none;
+
+  cursor: pointer;
 }
 
 .range__button--min {
@@ -2102,16 +2112,185 @@ input[type="radio"].visually-hidden {
   font-family: "PT Sans", "Arial", sans-serif;
 }
 
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+
+  display: none;
+
+  background-color: rgb(255, 255, 255);
+  border-top: 7px solid rgb(238, 54, 67);
+  box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
+
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.modal--show {
+  display: block;
+}
+
+.modal--map {
+  width: 940px;
+  height: 446px;
+
+  border-top: none;
+}
+
+.modal--feedback {
+  padding-top: 50px;
+}
+
+.modal--cart .button {
+  width: 200px;
+}
+
+.modal__embedded-map {
+  position: relative;
+  z-index: 2;
+
+  border: none;
+}
+
+.modal__map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 .modal__message {
+  margin: 0;
+  padding: 65px;
+  padding-left: 179px;
+  padding-right: 125px;
+
   font-size: 30px;
   line-height: 30px;
   color: rgb(0, 0, 0);
+  font-weight: normal;
 
   background-color: rgb(255, 255, 255);
+}
+
+.modal__message--success {
+  background-image: url("../img/icon-mark.svg");
+  background-repeat: no-repeat;
+  background-position: 81px 50px;
 }
 
 .modal__button {
   color: rgb(0, 0, 0);
 
   background-color: rgb(255, 255, 255);
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 37px 80px;
+
+  background-color: rgb(244, 244, 244);
+}
+
+.modal__close {
+  position: absolute;
+  top: 8px;
+  right: 4px;
+  z-index: 3;
+}
+
+.close {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close__icon {
+  fill: rgb(238, 54, 67);
+}
+
+.modal__close:focus .close__icon,
+.modal__close:hover .close__icon {
+  fill: rgb(202, 44, 55);
+}
+
+.modal__close:active .close__icon {
+  fill: rgb(186, 39, 50);
+}
+
+.feedback-form__wrapper {
+  padding: 0 80px;
+}
+
+.feedback-form__row {
+  display: flex;
+}
+
+.feedback-form__column {
+  width: 220px;
+  margin-right: 20px;
+}
+
+.feedback-form__column:last-child {
+  margin-right: 0;
+}
+
+.feedback-form__label {
+  display: block;
+
+  font-size: 18px;
+  line-height: 18px;
+  margin-bottom: 8px;
+}
+
+.feedback-form__input,
+.feedback-form__textarea {
+  display: block;
+  width: 100%;
+  padding: 8px 14px;
+  margin-bottom: 19px;
+  box-sizing: border-box;
+
+  font-size: 13px;
+  line-height: 18px;
+
+  border: solid 2px rgb(222, 227, 228);
+  border-radius: 3px;
+}
+
+.feedback-form__textarea {
+  min-height: 114px;
+}
+
+.feedback-form__input:hover,
+.feedback-form__textarea:hover {
+  border-color: rgb(181, 181, 181);
+}
+
+.feedback-form__input:focus,
+.feedback-form__textarea:focus {
+  border-color: rgb(238, 54, 67);
+}
+
+.feedback-form__submit {
+  display: block;
+  width: 100%;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-overlay--show {
+  display: block;
 }
