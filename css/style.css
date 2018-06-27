@@ -667,6 +667,7 @@ input[type="radio"].visually-hidden {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+      flex-wrap: wrap;
   justify-content: center;
   margin: 0;
   padding: 0;
@@ -677,6 +678,7 @@ input[type="radio"].visually-hidden {
 
   -webkit-box-pack: center;
   -ms-flex-pack: center;
+  -ms-flex-wrap: wrap;
 }
 
 .navigation__link {
@@ -1502,6 +1504,7 @@ input[type="radio"].visually-hidden {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+      flex-wrap: wrap;
   justify-content: space-between;
   margin: 0;
   padding: 0;
@@ -1510,6 +1513,7 @@ input[type="radio"].visually-hidden {
 
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
+  -ms-flex-wrap: wrap;
 }
 
 .social-button {
@@ -1943,6 +1947,7 @@ input[type="radio"].visually-hidden {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+      flex-wrap: wrap;
   justify-content: space-between;
   width: 43px;
   margin: 0;
@@ -1953,6 +1958,7 @@ input[type="radio"].visually-hidden {
 
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
+  -ms-flex-wrap: wrap;
 }
 
 .direction__link {
@@ -2119,6 +2125,7 @@ input[type="radio"].visually-hidden {
   z-index: 10;
 
   display: none;
+  max-width: 960px;
 
   background-color: rgb(255, 255, 255);
   border-top: 7px solid rgb(238, 54, 67);
