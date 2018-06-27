@@ -25,9 +25,9 @@ var openFeedback = document.querySelector('.js-open-feedback');
 var popupFeedback = document.querySelector('.modal--feedback');
 var closeFeedback = document.querySelector('.js-close-feedback');
 var feedbackForm = document.querySelector('.feedback-form');
-var name = popupFeedback && popupFeedback.querySelector('[name=name]');
-var mail = popupFeedback && popupFeedback.querySelector('[name=mail]');
-var message = popupFeedback && popupFeedback.querySelector('[name=message]');
+var feedbackName = popupFeedback && popupFeedback.querySelector('#feedback-name');
+var feedbackMail = popupFeedback && popupFeedback.querySelector('#feedback-mail');
+var feedbackMessage = popupFeedback && popupFeedback.querySelector('#feedback-message');
 
 var buyButtons = document.querySelectorAll('.js-buy');
 var popupBuyModal = document.querySelector('.modal--cart');
@@ -71,16 +71,16 @@ openFeedback && openFeedback.addEventListener(EVENT.CLICK, function(event) {
   event.preventDefault();
   openPopup(popupFeedback);
   if (storageName)
-    name.value = storageName;
+    feedbackName.value = storageName;
   if (storageMail)
-    mail.value = storageMail;
+    feedbackMail.value = storageMail;
 
   if (storageName && storageMail)
-    message.focus();
+    feedbackMessage.focus();
   else if (storageName)
-    mail.focus();
+    feedbackMail.focus();
   else
-    name.focus();
+    feedbackName.focus();
 });
 
 closeFeedback && closeFeedback.addEventListener(EVENT.CLICK, function(event) {
@@ -89,12 +89,12 @@ closeFeedback && closeFeedback.addEventListener(EVENT.CLICK, function(event) {
 });
 
 feedbackForm && feedbackForm.addEventListener(EVENT.SUBMIT, function(event) {
-  if (!name.value || !mail.value || !message.value) {
+  if (!feedbackName.value || !feedbackMail.value || !feedbackMessage.value) {
     event.preventDefault();
     // добавляем селектор при ошибки закопления формы
   } else {
-    name && localStorage.setItem('name', name.value);
-    mail && localStorage.setItem('mail', mail.value);
+    feedbackName && localStorage.setItem('name', feedbackName.value);
+    feedbackMail && localStorage.setItem('mail', feedbackMail.value);
   }
 });
 
