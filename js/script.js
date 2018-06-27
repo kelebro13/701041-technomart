@@ -1,34 +1,42 @@
 'use strict';
-const isIE = (function() {
+var isIE = (function() {
   var ua = window.navigator.userAgent;
   /* MSIE used to detect old browsers and Trident used to newer ones*/
   return ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
 })();
-const CLICK = 'click';
 
-const overlay = document.querySelector('.modal-overlay');
-const popups = document.querySelectorAll('.modal');
+var EVENT = {
+  CLICK: 'click',
+  FOCUS: 'focus',
+  BLUR: 'blur',
+  SUBMIT: 'submit',
+  KEYDOWN: 'keydown',
 
-const openMap = document.querySelector('.js-open-map');
-const popupMap = document.querySelector('.modal--map');
-const closeMap = document.querySelector('.js-close-map');
+};
 
-const openFeedback = document.querySelector('.js-open-feedback');
-const popupFeedback = document.querySelector('.modal--feedback');
-const closeFeedback = document.querySelector('.js-close-feedback');
-const feedbackForm = document.querySelector('.feedback-form');
-const name = popupFeedback && popupFeedback.querySelector('[name=name]');
-const mail = popupFeedback && popupFeedback.querySelector('[name=mail]');
-const message = popupFeedback && popupFeedback.querySelector('[name=message]');
+var overlay = document.querySelector('.modal-overlay');
+var popups = document.querySelectorAll('.modal');
 
-const buyButtons = document.querySelectorAll('.js-buy');
-const popupBuyModal = document.querySelector('.modal--cart');
-const closeBuyModal = document.querySelector('.js-close-cart');
+var openMap = document.querySelector('.js-open-map');
+var popupMap = document.querySelector('.modal--map');
+var closeMap = document.querySelector('.js-close-map');
 
-const addBookmarkButtons = document.querySelectorAll('.js-add-bookmark');
+var openFeedback = document.querySelector('.js-open-feedback');
+var popupFeedback = document.querySelector('.modal--feedback');
+var closeFeedback = document.querySelector('.js-close-feedback');
+var feedbackForm = document.querySelector('.feedback-form');
+var name = popupFeedback && popupFeedback.querySelector('[name=name]');
+var mail = popupFeedback && popupFeedback.querySelector('[name=mail]');
+var message = popupFeedback && popupFeedback.querySelector('[name=message]');
 
-const storageName = localStorage.getItem('name');
-const storageMail = localStorage.getItem('mail');
+var buyButtons = document.querySelectorAll('.js-buy');
+var popupBuyModal = document.querySelector('.modal--cart');
+var closeBuyModal = document.querySelector('.js-close-cart');
+
+var addBookmarkButtons = document.querySelectorAll('.js-add-bookmark');
+
+var storageName = localStorage.getItem('name');
+var storageMail = localStorage.getItem('mail');
 
 
 function closePopup(popup){
@@ -41,7 +49,7 @@ function openPopup(popup) {
   overlay.classList.add('modal-overlay--show');
 }
 
-overlay.addEventListener(CLICK, function(event) {
+overlay.addEventListener(EVENT.CLICK, function(event) {
   event.preventDefault();
   Array.prototype.forEach.call(popups, function(p) {
     if(p.classList.contains('modal--show'))
@@ -49,17 +57,17 @@ overlay.addEventListener(CLICK, function(event) {
   });
 });
 
-openMap && openMap.addEventListener(CLICK, function(event) {
+openMap && openMap.addEventListener(EVENT.CLICK, function(event) {
   event.preventDefault();
   openPopup(popupMap);
 });
 
-closeMap && closeMap.addEventListener(CLICK, function(event) {
+closeMap && closeMap.addEventListener(EVENT.CLICK, function(event) {
   event.preventDefault();
   closePopup(popupMap);
 });
 
-openFeedback && openFeedback.addEventListener(CLICK, function(event) {
+openFeedback && openFeedback.addEventListener(EVENT.CLICK, function(event) {
   event.preventDefault();
   openPopup(popupFeedback);
   if (storageName)
@@ -75,12 +83,12 @@ openFeedback && openFeedback.addEventListener(CLICK, function(event) {
     name.focus();
 });
 
-closeFeedback && closeFeedback.addEventListener(CLICK, function(event) {
+closeFeedback && closeFeedback.addEventListener(EVENT.CLICK, function(event) {
   event.preventDefault();
   closePopup(popupFeedback);
 });
 
-feedbackForm && feedbackForm.addEventListener('submit', function(event) {
+feedbackForm && feedbackForm.addEventListener(EVENT.SUBMIT, function(event) {
   if (!name.value || !mail.value || !message.value) {
     event.preventDefault();
     // добавляем селектор при ошибки закопления формы
@@ -92,28 +100,28 @@ feedbackForm && feedbackForm.addEventListener('submit', function(event) {
 
 buyButtons && Array.prototype.forEach.call(buyButtons, function(b) {
   if (isIE) {
-    b.addEventListener('focus', function(event) {
+    b.addEventListener(EVENT.FOCUS, function(event) {
       event.preventDefault();
       b.parentElement.parentElement.parentElement.classList.add('card--current');
   });
 
-    b.addEventListener('blur', function(event) {
+    b.addEventListener(EVENT.BLUR, function(event) {
       event.preventDefault();
       b.parentElement.parentElement.parentElement.classList.remove('card--current');
   });
   }
-  b.addEventListener(CLICK, function(event) {
+  b.addEventListener(EVENT.CLICK, function(event) {
     event.preventDefault();
     openPopup(popupBuyModal);
   });
 });
 
-closeBuyModal && closeBuyModal.addEventListener(CLICK, function(event) {
+closeBuyModal && closeBuyModal.addEventListener(EVENT.CLICK, function(event) {
   event.preventDefault();
   closePopup(popupBuyModal);
 });
 
-window.addEventListener('keydown', function(event) {
+window.addEventListener(EVENT.KEYDOWN, function(event) {
   if (event.keyCode === 27) {
     Array.prototype.forEach.call(popups, function(p) {
       if(p.classList.contains('modal--show'))
@@ -125,12 +133,12 @@ window.addEventListener('keydown', function(event) {
 
 Array.prototype.forEach.call(addBookmarkButtons, function (b) {
   if (isIE) {
-    b.addEventListener('focus', function (event) {
+    b.addEventListener(EVENT.FOCUS, function (event) {
       event.preventDefault();
       b.parentElement.parentElement.parentElement.classList.add('card--current');
     });
 
-    b.addEventListener('blur', function (event) {
+    b.addEventListener(EVENT.BLUR, function (event) {
       event.preventDefault();
       b.parentElement.parentElement.parentElement.classList.remove('card--current');
     });

@@ -163,7 +163,6 @@ input[type="radio"].visually-hidden {
 
   background-color: rgb(238, 54, 67);
   border-bottom: 5px solid rgb(181, 41, 51);
-
   cursor: pointer;
 
   -webkit-box-align: center;
@@ -423,7 +422,6 @@ input[type="radio"].visually-hidden {
 
   background: none;
   border: none;
-
   cursor: pointer;
 }
 
@@ -1074,8 +1072,11 @@ input[type="radio"].visually-hidden {
 
 .card--current .card__actions-list,
 .card:focus .card__actions-list,
-.card:focus-within .card__actions-list,
 .card:hover .card__actions-list {
+  opacity: 1;
+}
+
+.card:focus-within .card__actions-list {
   opacity: 1;
 }
 
@@ -1839,7 +1840,6 @@ input[type="radio"].visually-hidden {
 
   background: url("../img/filter-button.svg") no-repeat 0 0;
   border: none;
-
   cursor: pointer;
 }
 
@@ -2122,9 +2122,11 @@ input[type="radio"].visually-hidden {
 
   background-color: rgb(255, 255, 255);
   border-top: 7px solid rgb(238, 54, 67);
-  box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
-
-  transform: translateX(-50%) translateY(-50%);
+  -webkit-box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
+          box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
 }
 
 .modal--show {
@@ -2163,13 +2165,13 @@ input[type="radio"].visually-hidden {
 .modal__message {
   margin: 0;
   padding: 65px;
-  padding-left: 179px;
   padding-right: 125px;
+  padding-left: 179px;
 
+  font-weight: normal;
   font-size: 30px;
   line-height: 30px;
   color: rgb(0, 0, 0);
-  font-weight: normal;
 
   background-color: rgb(255, 255, 255);
 }
@@ -2187,12 +2189,18 @@ input[type="radio"].visually-hidden {
 }
 
 .modal__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+      flex-wrap: wrap;
   justify-content: space-between;
-  flex-wrap: wrap;
   padding: 37px 80px;
 
   background-color: rgb(244, 244, 244);
+
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -ms-flex-wrap: wrap;
 }
 
 .modal__close {
@@ -2226,6 +2234,8 @@ input[type="radio"].visually-hidden {
 }
 
 .feedback-form__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -2240,19 +2250,20 @@ input[type="radio"].visually-hidden {
 
 .feedback-form__label {
   display: block;
+  margin-bottom: 8px;
 
   font-size: 18px;
   line-height: 18px;
-  margin-bottom: 8px;
 }
 
 .feedback-form__input,
 .feedback-form__textarea {
   display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
-  padding: 8px 14px;
   margin-bottom: 19px;
-  box-sizing: border-box;
+  padding: 8px 14px;
 
   font-size: 13px;
   line-height: 18px;
