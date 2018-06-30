@@ -436,6 +436,8 @@ input[type="radio"].visually-hidden {
 .contact__link {
   display: block;
   width: 100%;
+
+  font-family: "Cuprum", "Arial", sans-serif;
 }
 
 .main-header__contact-info {
@@ -449,6 +451,7 @@ input[type="radio"].visually-hidden {
 .contact-info__tel {
   position: relative;
 
+  display: block;
   margin: 0;
   margin-bottom: 4px;
   padding: 9px 39px;
@@ -1177,6 +1180,7 @@ input[type="radio"].visually-hidden {
   margin-bottom: 6px;
 
   color: rgb(169, 169, 169);
+  text-transform: uppercase;
   text-decoration: line-through;
 }
 
@@ -1250,6 +1254,7 @@ input[type="radio"].visually-hidden {
   margin: 0;
   margin-bottom: 25px;
 
+  font-weight: normal;
   font-size: 30px;
   line-height: 30px;
   font-family: "Cuprum", "Arial", sans-serif;
@@ -1300,8 +1305,10 @@ input[type="radio"].visually-hidden {
 .tabs__control {
   display: block;
   width: 100%;
-  padding: 15px 22px;
+  padding: 13px 22px;
+  padding-bottom: 17px;
 
+  font-weight: bold;
   font-size: 21px;
   line-height: 30px;
   font-family: "Cuprum", "Arial", sans-serif;
@@ -1312,6 +1319,7 @@ input[type="radio"].visually-hidden {
   background-color: rgb(50, 66, 92);
   border: none;
   border-radius: 0;
+  box-shadow: inset 0 -1px 0 0 rgb(77, 99, 123);
 }
 
 
@@ -1330,7 +1338,9 @@ input[type="radio"].visually-hidden {
 }
 
 .tabs__list {
+  display: flex;
   width: 620px;
+  min-height: 290px;
   margin: 0;
   padding: 0;
   padding-top: 49px;
@@ -1340,6 +1350,7 @@ input[type="radio"].visually-hidden {
 
 .tabs__item {
   display: none;
+  width: 100%;
   min-height: 265px;
 
   background-image: url("../img/services-slide-1.png");
@@ -1400,6 +1411,7 @@ input[type="radio"].visually-hidden {
   margin: 0;
   margin-bottom: 25px;
 
+  font-weight: normal;
   font-size: 30px;
   line-height: 30px;
   font-family: "Cuprum", "Arial", sans-serif;
@@ -1414,7 +1426,7 @@ input[type="radio"].visually-hidden {
 }
 
 .main-footer {
-  margin-top: 86px;
+  margin-top: 84px;
 
   color: rgb(255, 255, 255);
 
@@ -1430,7 +1442,7 @@ input[type="radio"].visually-hidden {
   display: -ms-flexbox;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 35px;
+  padding-bottom: 38px;
 
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
