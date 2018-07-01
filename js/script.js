@@ -38,6 +38,15 @@ var addBookmarkButtons = document.querySelectorAll('.js-add-bookmark');
 var storageName = localStorage.getItem('name');
 var storageMail = localStorage.getItem('mail');
 
+var slideControls = document.querySelectorAll('.carousel__slide-indicator');
+var slides = document.querySelectorAll('.slide');
+var nextSlideBtn = document.querySelector('.carousel__scroll--next');
+var prevSlideBtn = document.querySelector('.carousel__scroll--prev');
+var activeSlide = 1;
+
+var tabsControls = document.querySelectorAll('.tabs__control');
+var tabsContents = document.querySelectorAll('.tabs__item');
+var activeServiceTab = 0;
 
 function closePopup(popup){
   popup.classList.remove('modal--show');
@@ -143,4 +152,74 @@ Array.prototype.forEach.call(addBookmarkButtons, function (b) {
       b.parentElement.parentElement.parentElement.classList.remove('card--current');
     });
   }
+});
+
+// слайдер
+
+function setActiveSlide() {
+  Array.prototype.forEach.call(slideControls, function (c, i) {
+    if (c.classList.contains('carousel__slide-indicator--current'))
+      c.classList.remove('carousel__slide-indicator--current');
+    if (i === activeSlide)
+      c.classList.add('carousel__slide-indicator--current');
+  });
+
+  Array.prototype.forEach.call(slides, function (slide, contentIndex) {
+    if (slide.classList.contains('carousel__slide--current'))
+      slide.classList.remove('carousel__slide--current');
+    if (contentIndex === activeSlide)
+      slide.classList.add('carousel__slide--current')
+  });
+}
+
+nextSlideBtn && nextSlideBtn.addEventListener(EVENT.CLICK, function (event) {
+  event.preventDefault();
+  if (activeSlide < slides.length - 1) {
+    activeSlide++;
+    setActiveSlide();
+  }
+});
+
+prevSlideBtn && prevSlideBtn.addEventListener(EVENT.CLICK, function (event) {
+  event.preventDefault();
+  if (activeSlide > 0) {
+    activeSlide--;
+    setActiveSlide();
+  }
+});
+
+slideControls && Array.prototype.forEach.call(slideControls, function (control, controlIndex) {
+  control.addEventListener(EVENT.CLICK, function (event) {
+    event.preventDefault();
+    activeSlide = controlIndex;
+    setActiveSlide();
+  });
+});
+
+// блок "Сервисы"
+
+function setActiveServiceTab() {
+  Array.prototype.forEach.call(tabsControls, function (c, i) {
+    if (c.classList.contains('tabs__control--current'))
+      c.classList.remove('tabs__control--current');
+    if (i === activeServiceTab)
+      c.classList.add('tabs__control--current');
+  });
+
+  Array.prototype.forEach.call(tabsContents, function (content, contentIndex) {
+    if (content.classList.contains('tabs__item--current'))
+      content.classList.remove('tabs__item--current');
+    if (contentIndex === activeServiceTab)
+      content.classList.add('tabs__item--current')
+  });
+}
+
+tabsControls && Array.prototype.forEach.call(tabsControls, function (control, controlIndex) {
+  control.addEventListener(EVENT.CLICK, function (event) {
+    event.preventDefault();
+    if (activeServiceTab !== controlIndex) {
+      activeServiceTab = controlIndex;
+      setActiveServiceTab();
+    }
+  });
 });

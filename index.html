@@ -118,17 +118,17 @@
               <ul class="carousel__slide-list">
                 <li class="slide carousel__slide">
                   <div class="slide__info">
-                    <h3 class="slide__title">Дрели</h3>
-                    <p class="slide__text">Соседям на радость!</p>
-                  </div>
-                  <img src="img/slide-2.jpg" width="620" height="266" alt="Дрели. Соседям на радость!">
-                </li>
-                <li class="slide carousel__slide">
-                  <div class="slide__info">
                     <h3 class="slide__title">Перфораторы</h3>
                     <p class="slide__text">Настоящие мужские игрушки</p>
                   </div>
                   <img src="img/slide-1.jpg" width="620" height="266" alt="Перфораторы. Настоящие мужские игрушки">
+                </li>
+                <li class="slide carousel__slide carousel__slide--current">
+                  <div class="slide__info">
+                    <h3 class="slide__title">Дрели</h3>
+                    <p class="slide__text">Соседям на радость!</p>
+                  </div>
+                  <img src="img/slide-2.jpg" width="620" height="266" alt="Дрели. Соседям на радость!">
                 </li>
               </ul>
               <button class="carousel__scroll carousel__scroll--prev" type="button"><span class="visually-hidden">Предыдущий слайд</span>
@@ -136,12 +136,18 @@
               <button class="carousel__scroll carousel__scroll--next" type="button"><span class="visually-hidden">Следующий слайд</span>
               </button>
               <a class="button button--default carousel__button" href="catalog.html">Открыть каталог</a>
-              <div class="carousel__controls">
-                <button class="carousel__control" type="button"><span class="visually-hidden">Слайд про дрели</span>
-                </button>
-                <button class="carousel__control carousel__control--active" type="button"><span class="visually-hidden">Слайд про перфораторы</span>
-                </button>
-              </div>
+              <ul class="carousel__controls">
+                <li class="carousel__control">
+                  <button class="carousel__slide-indicator" type="button">
+                    <span class="visually-hidden">Слайд про дрели</span>
+                  </button>
+                </li>
+                <li class="carousel__control">
+                  <button class="carousel__slide-indicator carousel__slide-indicator--current" type="button">
+                    <span class="visually-hidden">Слайд про перфораторы</span>
+                  </button>
+                </li>
+              </ul>
             </div>
             <div>
               <div class="promo-card promo-card--sale">
