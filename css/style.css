@@ -1303,6 +1303,8 @@ input[type="radio"].visually-hidden {
   width: 184px;
   height: 73px;
   margin-bottom: 35px;
+
+  pointer-events: none;
 }
 
 .brand:active .brand__thumbnail {
