@@ -63,6 +63,8 @@ overlay.addEventListener(EVENT.CLICK, function(event) {
   Array.prototype.forEach.call(popups, function(p) {
     if(p.classList.contains('modal--show'))
       closePopup(p);
+    if(p.classList.contains('modal--error'))
+      p.classList.remove('modal--error');
   });
 });
 
@@ -94,13 +96,14 @@ openFeedback && openFeedback.addEventListener(EVENT.CLICK, function(event) {
 
 closeFeedback && closeFeedback.addEventListener(EVENT.CLICK, function(event) {
   event.preventDefault();
+  popupFeedback.classList.remove('modal--error');
   closePopup(popupFeedback);
 });
 
 feedbackForm && feedbackForm.addEventListener(EVENT.SUBMIT, function(event) {
   if (!feedbackName.value || !feedbackMail.value || !feedbackMessage.value) {
     event.preventDefault();
-    // добавляем селектор при ошибки закопления формы
+    popupFeedback.classList.add('modal--error');
   } else {
     feedbackName && localStorage.setItem('name', feedbackName.value);
     feedbackMail && localStorage.setItem('mail', feedbackMail.value);
@@ -135,6 +138,8 @@ window.addEventListener(EVENT.KEYDOWN, function(event) {
     Array.prototype.forEach.call(popups, function(p) {
       if(p.classList.contains('modal--show'))
         closePopup(p);
+      if(p.classList.contains('modal--error'))
+        p.classList.remove('modal--error');
     });
     overlay.classList.remove('modal-feedback--show');
   }
